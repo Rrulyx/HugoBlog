@@ -1,16 +1,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Posts on My New Hugo Site</title>
+		<title>Posts on My journey in IGD301</title>
 		<link>https://rrulyx.github.io/HugoBlog/en/posts/</link>
-		<description>Recent content in Posts on My New Hugo Site</description>
+		<description>Recent content in Posts on My journey in IGD301</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<copyright>CHANGE ME</copyright>
 		<lastBuildDate>Mon, 20 Nov 2023 14:48:51 +0100</lastBuildDate>
 		<atom:link href="https://rrulyx.github.io/HugoBlog/en/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>B_unity</title>
+			<title>B: Unity setup</title>
 			<link>https://rrulyx.github.io/HugoBlog/en/posts/b_unity/</link>
 			<pubDate>Mon, 20 Nov 2023 14:48:51 +0100</pubDate>
 			
@@ -38,10 +37,10 @@ Once the modules installed, I created a new 3D project. The first thing i did wa
 I changed the theme for the theme for the Hermit-V2. Therefore, I had to make a little setup in the hugo.toml configuration file.
 Deployment I deployed the site to GitHub by following the Host on GitHub Pages tutorial.
 This is my first website !</description>
-			<content type="html"><![CDATA[<h1 id="quick-start">Quick Start</h1>
+			<content type="html"><![CDATA[<h2 id="quick-start">Quick Start</h2>
 <p>For the blog, I followed the <a href="https://gohugo.io/getting-started/quick-start/">Quick start</a> tutorial of HUGO.</p>
 <p>I changed the theme for the theme for the <a href="https://themes.gohugo.io/themes/hermit-v2/">Hermit-V2</a>. Therefore, I had to make a little setup in the <code>hugo.toml</code> configuration file.</p>
-<p><img src="https://rrulyx.github.io/HugoBlog/Posts/A_hugo/Home.png" alt="Home Page"></p>
+<p><img src="/HugoBlog/Posts/A_hugo/Home.png" alt="Home Page"></p>
 <h2 id="deployment">Deployment</h2>
 <p>I deployed the site to GitHub by following the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on GitHub Pages</a> tutorial.</p>
 <p>This is my first website !</p>
