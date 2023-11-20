@@ -13,3 +13,4 @@ I changed the theme for the theme for the "[Hermit-V2](https://themes.gohugo.io/
 
 
 ![image](/Posts/A_hugo/Home.png)
+
