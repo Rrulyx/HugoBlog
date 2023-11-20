@@ -1,11 +1,11 @@
 ---
-title: "B_unity"
+title: "B: Unity setup"
 date: 2023-11-20T14:48:51+01:00
 draft: false
 toc: false
 images:
 tags: 
-  - untagged
+  - setup
 ---
 
 # Setup of Unity

@@ -6,7 +6,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My journey in IGD301'
 theme = 'hermit-v2'
 
 pygmentsCodefences  = true
@@ -14,7 +14,7 @@ pygmentsUseClasses  = true
 
 rssLimit = 10
 
-copyright = "CHANGE ME"
+# copyright = ""
 enableEmoji = true
 
 [params.author]
@@ -29,14 +29,14 @@ enableEmoji = true
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
+  dateformNumTime = "2006-01-02 15:04"
 
-  # description = "CHANGE ME SITE DESCRIPTION"
+  description = "Follow me in the discovery of Extended Reality"
   # images = [""]
   themeColor = "#494f5c"
 
-  #homeSubtitle = "CHANGE ME HOME SUBTITLE"
-  footerCopyright = "CHANGE ME FOOTER COPYRIGHT"
+  homeSubtitle = "Follow me in the discovery of Extended Reality"
+  # footerCopyright = "CHANGE ME FOOTER COPYRIGHT"
   # bgImg = ""
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
@@ -48,8 +48,8 @@ enableEmoji = true
   homeSubtitlePrinter = true
   scrollToTop = true 
   global_mathjax = false
-  readTime = true
-  readTimeSeparator = "CHANGE ME READ TIME"
+  readTime = false
+  # readTimeSeparator = "CHANGE ME READ TIME"
   # legacyLayout = false
   shareSocial = true
 
@@ -73,6 +73,12 @@ enableEmoji = true
     weight = 10
 
   [[menu.main]]
-    name = "About"
-    url = "about-hugo/"
-    weight = 20
+    name = "Setup"
+    url = "tags/setup/"
+    weight = 10
+
+
+#  [[menu.main]]
+#    name = "About"
+#    url = "about-hugo/"
+#    weight = 20
