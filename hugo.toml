@@ -1,7 +1,5 @@
 baseURL = 'https://rrulyx.github.io/HugoBlog/'
 
-publishDir = "docs"
-
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 

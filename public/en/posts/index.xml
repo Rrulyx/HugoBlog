@@ -15,11 +15,16 @@
 			<pubDate>Mon, 20 Nov 2023 14:48:51 +0100</pubDate>
 			
 			<guid>https://rrulyx.github.io/HugoBlog/en/posts/b_unity/</guid>
-			<description>Setup of Unity I already had Unity installed from another course. Because I did not want to use too much space, I decided to stay on the same version and just add the necessary modules for this course</description>
+			<description>Setup of Unity I already had Unity installed from another course. Because I did not want to use too much space, I decided to stay on the same version and just add the necessary modules for this course:
+Once the modules installed, I created a new 3D project. The first thing i did was changing the background color while on play mode because I made too much unsaved changes on my previous project (every modifiations made while in project mode are discarded).</description>
 			<content type="html"><![CDATA[<h1 id="setup-of-unity">Setup of Unity</h1>
-<p>I already had Unity installed from another course. Because I did not want to use too much space, I decided to stay on the same version and just add the necessary modules for this course</p>
-<p><img src="https://rrulyx.github.io/HugoBlog/Posts/B_unity/play.png" alt="Modules"></p>
-<p><img src="https://rrulyx.github.io/HugoBlog/Posts/B_unity/playmodeTint.png" alt="Home Page"></p>
+<p>I already had Unity installed from another course. Because I did not want to use too much space, I decided to stay on the same version and just add the necessary modules for this course:</p>
+<p><img src="/HugoBlog/Posts/B_unity/installModules.png" alt="Modules"></p>
+<p>Once the modules installed, I created a new 3D project. The first thing i did was changing the background color while on play mode because I made too much unsaved changes on my previous project (every modifiations made while in project mode are discarded). This is done via the <code>Preferences &gt; Colors &gt; Playmode tint</code>:</p>
+<p><img src="/HugoBlog/Posts/B_unity/playmodeTint.png" alt="Home Page"></p>
+<p>You can immediately say when you are in play mode:</p>
+<p><img src="/HugoBlog/Posts/B_unity/edit.png" alt="Home Page"></p>
+<p><img src="/HugoBlog/Posts/B_unity/play.png" alt="Home Page"></p>
 ]]></content>
 		</item>
 		

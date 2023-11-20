@@ -12,7 +12,7 @@ For the blog, I followed the [Quick start](https://gohugo.io/getting-started/qui
 I changed the theme for the theme for the [Hermit-V2](https://themes.gohugo.io/themes/hermit-v2/). Therefore, I had to make a little setup in the `hugo.toml` configuration file.
 
 
-![image](https://rrulyx.github.io/HugoBlog/Posts/A_hugo/Home.png)
+![Home Page](https://rrulyx.github.io/HugoBlog/Posts/A_hugo/Home.png)
 
 ## Deployment
 
