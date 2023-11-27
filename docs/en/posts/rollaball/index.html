@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="15 days">
+<link rel="apple-touch-icon" sizes="180x180" href="/HugoBlog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/HugoBlog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/HugoBlog/favicon-16x16.png">
+<link rel="manifest" href="/HugoBlog/site.webmanifest">
+<meta name="msapplication-TileImage" content="/HugoBlog/mstile-144x144.png">
+<link rel="shortcut icon" href="/HugoBlog/favicon.ico"><meta name="author" content="Julien Jampsin">
+<meta name="theme-color" content="#494f5c">
+<meta name="msapplication-TileColor" content="#494f5c">
+<link rel="mask-icon" href="/HugoBlog/safari-pinned-tab.svg" color="#494f5c"><meta name="description" content="Follow me in the discovery of Extended Reality">
+<meta itemprop="name" content="Roll A Ball Tutorial">
+<meta itemprop="description" content="Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.
+Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject."><meta itemprop="datePublished" content="2023-11-27T11:22:44+01:00" />
+<meta itemprop="dateModified" content="2023-11-27T11:22:44+01:00" />
+<meta itemprop="wordCount" content="367">
+<meta itemprop="keywords" content="Unity," /><meta property="og:title" content="Roll A Ball Tutorial" />
+<meta property="og:description" content="Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.
+Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rrulyx.github.io/HugoBlog/en/posts/rollaball/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-27T11:22:44+01:00" />
+<meta property="article:modified_time" content="2023-11-27T11:22:44+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Roll A Ball Tutorial"/>
+<meta name="twitter:description" content="Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.
+Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject."/>
+<title>Roll A Ball Tutorial</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="https://rrulyx.github.io/HugoBlog/css/style.min.0bd02282ca1a934595726c6018224c5250614b68aac0aedea76bcc2f994583ce.css" integrity="sha256-C9Aigsoak0WVcmxgGCJMUlBhS2iqwK7ep2vML5lFg84=" crossorigin="anonymous">
+	</head>
+<body id="page">
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://rrulyx.github.io/HugoBlog/">My journey in IGD301</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+				<a href="https://rrulyx.github.io/HugoBlog/en/posts/">Posts</a>
+				<a href="https://rrulyx.github.io/HugoBlog/en/tags/setup/">Setup</a>
+</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="share-btn" class="hdr-btn" title="Share"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button>
+ 
+<div id="share-links" class="animated fast">
+    
+    
+    
+    
+    <ul>
+        <li>
+            <a href="https://twitter.com/intent/tweet?hashtags=hermit2&amp;url=https%3a%2f%2frrulyx.github.io%2fHugoBlog%2fen%2fposts%2frollaball%2f&amp;text=Roll%20A%20Ball%20Tutorial" target="_blank" rel="noopener" aria-label="Share on X"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="st0" d="m21.3 21.1 -11.4 -18.2h-7.2l11.4 18.2zm-18.6 0 7.2 -6.6m4.2 -5 7.2 -6.6"/></svg></a>
+        </li>
+        <li>
+            <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2frrulyx.github.io%2fHugoBlog%2fen%2fposts%2frollaball%2f" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+        </li>
+        <li>
+            <a href="mailto:?subject=Roll%20A%20Ball%20Tutorial&amp;body=https%3a%2f%2frrulyx.github.io%2fHugoBlog%2fen%2fposts%2frollaball%2f" target="_self" rel="noopener" aria-label="Share on Email"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2frrulyx.github.io%2fHugoBlog%2fen%2fposts%2frollaball%2f&amp;source=https%3a%2f%2frrulyx.github.io%2fHugoBlog%2f&amp;title=Roll%20A%20Ball%20Tutorial&amp;summary=Roll%20A%20Ball%20Tutorial%2c%20by%20Julien%20Jampsin%0a%0a%3cnil%3e%0a" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </li>
+        <li>
+            <a href="#" onclick="linkShare(&#34;Roll A Ball Tutorial&#34;,&#34;https://rrulyx.github.io/HugoBlog/en/posts/rollaball/&#34;,&#34;Roll A Ball Tutorial, by Julien Jampsin\n\n\u003cnil\u003e\n&#34;); return false;" target="_self" rel="noopener" aria-label="Copy Link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></a>
+        </li>
+    </ul>
+</div><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://rrulyx.github.io/HugoBlog/en/posts/">Posts</a></li>
+			<li><a href="https://rrulyx.github.io/HugoBlog/en/tags/setup/">Setup</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster"><article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Nov 27, 2023</span></div>
+				<h1>Roll A Ball Tutorial</h1>
+			</header>
+			<div class="post-info"><p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg><a href="" target="_blank">Julien Jampsin</a></p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://rrulyx.github.io/HugoBlog/en/tags/unity">Unity</a></span></p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>367 Words</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2023-11-27 11:22</p></div>
+			<hr class="post-end">
+			<div class="content">
+				<h1 id="setup">Setup<a href="#setup" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>I followed the Unity tutorial named <a href="https://learn.unity.com/project/roll-a-ball">Roll a Ball</a>. It was a simple Unity project to understand the basics of making a game.</p>
+<p>Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject. It worked exactly the same, except for the look of the scene editor:</p>
+<p><img src="/HugoBlog/Posts/RollABall/URP_Sphere.png" alt="URP Scene">
+<em>URP Scene</em></p>
+<p><img src="/HugoBlog/Posts/RollABall/My_Sphere.png" alt="My Scene">
+<em>My Scene</em></p>
+<h1 id="first-scripts">First scripts<a href="#first-scripts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>The first script is really basic, you just need to take the player input and add a force to the ball. All of the physics is done via the rigidBody, you do not have a lot of control, but it is really simple to use.</p>
+<p>The next script waas just for the camera to follow the ball, really simple too.</p>
+<h1 id="collectibles">Collectibles<a href="#collectibles" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>The collectbles are more interesting. What you do is you create a prefab that stores the material, the script, etc, and then you just instantiate multiple of them.</p>
+<p>To create make the player able to collect them, we add a collider and a tag that will make the collision with the player run the <code>OnTriggerEnter(Collider other)</code> method. We deactivate the pick up via the player code on collision.</p>
+<p>Furthermore, to optimize a bit the progrtam, we add a rigidbody to the prefab so that unity considers it as a <strong>Kinematic</strong> object instead of a <strong>static</strong> one, which speed up the computations when moving (which is relevant here because pickups spin at each frame).</p>
+<p><img src="/HugoBlog/Posts/RollABall/Prefab.png" alt="Prefab">
+<em>Collectible Prefab</em></p>
+<h1 id="build">Build<a href="#build" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>To share thus game, you need to build it, otherwise the player needs to have unity installed on his device to be able to run it. Building is really simple in unity, you just chse a few settings, your platform and hit build. Here, we decided to make the game run in a window instead of full screen as it does not have a menu to close it yet.</p>
+<p>In MacOS, every gamefile is grouped into a single <code>.app</code> file which can be runned by itself</p>
+<p><img src="/HugoBlog/Posts/RollABall/Build.png" alt="Game">
+<em>My game running as a standalone</em></p>
+
+			</div>
+
+<div class="related-posts thin">
+	<h2>See Also</h2>
+	<ul>
+	
+	<li><a href="/HugoBlog/en/posts/b_unity/">B: Unity setup</a></li>
+	
+	</ul>
+</div>
+
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://rrulyx.github.io/HugoBlog/en/posts/b_unity/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>B: Unity setup</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+	<p>
+		&copy; 2023 <a href="https://rrulyx.github.io/HugoBlog/">Julien Jampsin</a>
+		&#183; 
+		&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+		&#183; Theme <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener">Hermit-V2</a>
+		
+		&#183; <a href="https://rrulyx.github.io/HugoBlog/en/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		
+	</p>
+
+</footer>
+<script async src="https://rrulyx.github.io/HugoBlog/js/bundle.min.038214de9d568246fadcfeb06c69349925de3209f332ec123861b6aa031d63c6.js" integrity="sha256-A4IU3p1Wgkb63P6wbGk0mSXeMgnzMuwSOGG2qgMdY8Y=" crossorigin="anonymous"></script><script async src="https://rrulyx.github.io/HugoBlog/js/link-share.min.24409a4f6e5537d70ffc55ec8f9192208d718678cb8638585342423020b37f39.js" integrity="sha256-JECaT25VN9cP/FXsj5GSII1xhnjLhjhYU0JCMCCzfzk=" crossorigin="anonymous"></script>
+</body>
+
+</html>

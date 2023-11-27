@@ -6,8 +6,16 @@
     <description>Recent content on My journey in IGD301</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2023 14:48:51 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 27 Nov 2023 11:22:44 +0100</lastBuildDate>
     <atom:link href="https://rrulyx.github.io/HugoBlog/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Roll A Ball Tutorial</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</link>
+      <pubDate>Mon, 27 Nov 2023 11:22:44 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</guid>
+      <description>Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.
+Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject.</description>
+    </item>
     <item>
       <title>B: Unity setup</title>
       <link>https://rrulyx.github.io/HugoBlog/en/posts/b_unity/</link>

@@ -5,8 +5,40 @@
 		<description>Recent content in Posts on My journey in IGD301</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 20 Nov 2023 14:48:51 +0100</lastBuildDate>
+		<lastBuildDate>Mon, 27 Nov 2023 11:22:44 +0100</lastBuildDate>
 		<atom:link href="https://rrulyx.github.io/HugoBlog/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Roll A Ball Tutorial</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</link>
+			<pubDate>Mon, 27 Nov 2023 11:22:44 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</guid>
+			<description>Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.
+Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject.</description>
+			<content type="html"><![CDATA[<h1 id="setup">Setup</h1>
+<p>I followed the Unity tutorial named <a href="https://learn.unity.com/project/roll-a-ball">Roll a Ball</a>. It was a simple Unity project to understand the basics of making a game.</p>
+<p>Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject. It worked exactly the same, except for the look of the scene editor:</p>
+<p><img src="/HugoBlog/Posts/RollABall/URP_Sphere.png" alt="URP Scene">
+<em>URP Scene</em></p>
+<p><img src="/HugoBlog/Posts/RollABall/My_Sphere.png" alt="My Scene">
+<em>My Scene</em></p>
+<h1 id="first-scripts">First scripts</h1>
+<p>The first script is really basic, you just need to take the player input and add a force to the ball. All of the physics is done via the rigidBody, you do not have a lot of control, but it is really simple to use.</p>
+<p>The next script waas just for the camera to follow the ball, really simple too.</p>
+<h1 id="collectibles">Collectibles</h1>
+<p>The collectbles are more interesting. What you do is you create a prefab that stores the material, the script, etc, and then you just instantiate multiple of them.</p>
+<p>To create make the player able to collect them, we add a collider and a tag that will make the collision with the player run the <code>OnTriggerEnter(Collider other)</code> method. We deactivate the pick up via the player code on collision.</p>
+<p>Furthermore, to optimize a bit the progrtam, we add a rigidbody to the prefab so that unity considers it as a <strong>Kinematic</strong> object instead of a <strong>static</strong> one, which speed up the computations when moving (which is relevant here because pickups spin at each frame).</p>
+<p><img src="/HugoBlog/Posts/RollABall/Prefab.png" alt="Prefab">
+<em>Collectible Prefab</em></p>
+<h1 id="build">Build</h1>
+<p>To share thus game, you need to build it, otherwise the player needs to have unity installed on his device to be able to run it. Building is really simple in unity, you just chse a few settings, your platform and hit build. Here, we decided to make the game run in a window instead of full screen as it does not have a menu to close it yet.</p>
+<p>In MacOS, every gamefile is grouped into a single <code>.app</code> file which can be runned by itself</p>
+<p><img src="/HugoBlog/Posts/RollABall/Build.png" alt="Game">
+<em>My game running as a standalone</em></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>B: Unity setup</title>
