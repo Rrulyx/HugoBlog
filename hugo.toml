@@ -7,7 +7,7 @@ defaultContentLanguageInSubdir = true
 
 languageCode = 'en-us'
 title = 'My journey in IGD301'
-theme = 'hermit-v2'
+theme = 'hermit-v24'
 
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
