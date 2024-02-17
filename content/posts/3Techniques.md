@@ -1,7 +1,7 @@
 ---
 title: "3 Selection Pitch"
-date: 2024-02-17T15:41:07+01:00
-draft: true
+date: 2024-01-03T15:41:07+01:00
+draft: false
 toc: false
 images:
 tags: 
