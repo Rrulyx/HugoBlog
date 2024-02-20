@@ -5,8 +5,272 @@
 		<description>Recent content in Posts on My journey in IGD301</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 27 Nov 2023 11:22:44 +0100</lastBuildDate>
+		<lastBuildDate>Mon, 29 Jan 2024 12:48:53 +0100</lastBuildDate>
 		<atom:link href="https://rrulyx.github.io/HugoBlog/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Implementation</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</link>
+			<pubDate>Mon, 29 Jan 2024 12:48:53 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</guid>
+			<description>The concept I implemented what I explained in the Elevator Pitch and added a few things that I will explain in more details.
+Implementation Selection For the Selection, I took a ray from the player to the controller and multiplied it to have the virtual hand position. To select an object, you press the index trigger.
+I had to make two choices:
+Where on the player would be the origin ?</description>
+			<content type="html"><![CDATA[<p><img src="/HugoBlog/Posts/Implementation/Arms.png" alt="Arms"></p>
+<h1 id="the-concept">The concept</h1>
+<p>I implemented what I explained in the
+<a href="https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/">Elevator Pitch</a>
+and added a few things that I will explain in more details.</p>
+<h1 id="implementation">Implementation</h1>
+<h2 id="selection">Selection</h2>
+<p>For the Selection, I took a ray from the player to the controller and multiplied it to have the virtual hand position. To select an object, you press the index trigger.</p>
+<p>I had to make two choices:</p>
+<ul>
+<li>Where on the player would be the origin ?</li>
+</ul>
+<p>I tried several approaches and found out that the neck was the most intuitive, as when you move you arm parallel to the ground, your virtual arm is parallel to the ground.</p>
+<ul>
+<li>How many times will I multiply the arm length ?</li>
+</ul>
+<p>At first I felt like 3 times would be realistic, but it turns out that the SuperMarket assets are really big and therefore, I needed to make it at least 15 times to have something usable. I modified this value a few times with the rest of the implementation and had a coefficient of 20 in the end.</p>
+<h3 id="improvement">Improvement</h3>
+<p>I had an issue with this box:</p>
+<p><img src="/HugoBlog/Posts/Implementation/Box.png" alt="Arms"></p>
+<p>On the first tests of this method, i realised this box was really hard to select beacause it is really thin and your virtual hand moves to fast. Therefore, I added a new fonctionnality: When you press the palm of your hand, you move your virtual hand more slowly, allowing for much more precision.</p>
+<p>This is how I implemented it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">HandPosLeft</span> <span class="p">=</span> <span class="p">(</span><span class="n">HandPosLeft</span> <span class="p">-</span> <span class="n">PrecisePositionLeft</span><span class="p">)</span> <span class="p">/</span> <span class="n">coef</span> <span class="p">+</span> <span class="n">PrecisePositionLeft</span><span class="p">;</span>
+</span></span></code></pre></div><p>Where <code>HandPosLeft</code> is the position of the virtual hand as described earlier, <code>PrecisePositionLeft</code> is the anchored position and  <code>coef</code> is the coefficient of the extension of the virtual arm.</p>
+<p>But when I released the trigger, the virtual arm will teleport to the position it is supposed to be in. This was breaking the immersion, so instead, I added a smoothing function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="n">HandPosLeft</span> <span class="p">=</span> <span class="n">previousPos</span> <span class="p">+</span> <span class="n">smoothCoef</span> <span class="p">*</span> <span class="p">(</span><span class="n">HandPosLeft</span> <span class="p">-</span> <span class="n">previousPos</span><span class="p">);</span>
+</span></span></code></pre></div><p>This allows to reach the correct position quickly but be more fluid with a <code>smoothCoef</code> of <code>0.2</code>.</p>
+<h2 id="movement">Movement</h2>
+<p><img src="/HugoBlog/Posts/ElevatorPitch/movement.jpeg" alt="Movement"></p>
+<p>I first need to detect when the virtual hand is underground so I can place the player in the movement mode. This is done with this piece of code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">playerOnGround</span> <span class="p">&amp;&amp;</span> <span class="n">HandPosRight</span><span class="p">.</span><span class="n">y</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">OnGroundRight</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">playerOnGround</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rightPos</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">HandPosRight</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="m">0.0f</span><span class="p">,</span> <span class="n">HandPosRight</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Note that I will only do this if the player is on the ground, because otherwise, I need the player to move around the anchored hand.</p>
+<p>Then, this is how I move the player:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">OnGroundRight</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">CameraRig</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">-=</span> <span class="p">(</span><span class="n">HandPosRight</span> <span class="p">-</span> <span class="n">rightPos</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>To detect if the player is on the ground, I compare is current <code>y</code> position to the <code>y</code> position he had when the app began.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cs" data-lang="cs"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!</span> <span class="n">playerOnGround</span> <span class="p">&amp;&amp;</span> <span class="n">CameraRig</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span> <span class="p">&lt;</span> <span class="n">baseY</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CameraRig</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="n">CameraRig</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">baseY</span><span class="p">,</span> <span class="n">CameraRig</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OnGroundRight</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">playerOnGround</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="improvement-1">Improvement</h3>
+<p>This transition was really long:</p>
+<p><img src="/HugoBlog/Posts/Implementation/Far.png" alt="Movement"></p>
+<p>So i added a simple feature to extend the arms length by a factor 2 when you press a button.</p>
+<h2 id="both-hands">Both Hands</h2>
+<p>I wanted to have both hands able to do the same tasks, but juste adding the same code to the left hand added some complications: when the right hand is anchored and the left hand goes underground, the code would have both hands anchored and would create strange behaviours because it  would try to move the player in two different directions at the same time.</p>
+<p>To fix this issue, I created three different states:</p>
+<ul>
+<li>Right Hand anchored</li>
+<li>Left Hand anchored</li>
+<li>No Hand anchored</li>
+</ul>
+<p>These three states are exclusive, therefore when the left hand goes underground, the right hand is released and there is no strange behaviours anymore.</p>
+<h1 id="evaluation">Evaluation</h1>
+<p>I had two friends come over to test my implementation. User 0 is me, User 1 is a friend that never really played a video game and User 2 is a friend that already played some games in VR.</p>
+<p>I asked them to rank from 0 to 10:</p>
+<ul>
+<li>How easy was it to learn and use the commands ?</li>
+<li>Did you felt present on the virtual environment ?</li>
+<li>How much fun did you have ?</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Time</th>
+<th>Errors</th>
+<th></th>
+<th>Easy</th>
+<th>Presence</th>
+<th>Fun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>88s</td>
+<td>4</td>
+<td></td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>1</td>
+<td>131s</td>
+<td>3</td>
+<td></td>
+<td>9</td>
+<td>7</td>
+<td>10</td>
+</tr>
+<tr>
+<td>0</td>
+<td>120s</td>
+<td>7</td>
+<td></td>
+<td>7</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comments">Comments</h2>
+<p>I realised several things while they were playing:</p>
+<ul>
+<li>They did not use at all the precision feature, they always prefered to usse both hands: one to move themselves loosely to the object and the other one to make precision movements and select it.</li>
+<li>They always had one arm on the ground, they almost never touched the ground and when they had to, they were slower and less precise.</li>
+<li>Each time they had to move, they would extend the arms just for how funny the movement is, even if it would take longer and lead to less precision.</li>
+<li>The movement create a lot of motion sickness, which makes it almost unusable for more than 5 minutes&hellip;</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Elevator Pitch</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/</link>
+			<pubDate>Sun, 14 Jan 2024 12:13:27 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/</guid>
+			<description>Doctor Octopus I decided to immplement the method where have extendable arm. There is two differents parts to implement: one being the movement, the other being the selection. Let&amp;rsquo;s see how I intent on implementing, both of them.
+Selection The idea behid the selection is that you have a virtual double of your arm that is longer than your original arm, but but points in the same direction.
+To implement this, I will look at the vector from the head to the controller and multiply it by some amount to have the position of the virtual hand.</description>
+			<content type="html"><![CDATA[<h1 id="doctor-octopus">Doctor Octopus</h1>
+<p><img src="/HugoBlog/Posts/3Techniques/Octopus.png" alt="Octopus"></p>
+<p>I decided to immplement the method where have extendable arm. There is two differents parts to implement: one being the movement, the other being the selection.
+Let&rsquo;s see how I intent on implementing, both of them.</p>
+<h2 id="selection">Selection</h2>
+<p>The idea behid the selection is that you have a virtual double of your arm that is longer than your original arm, but but points in the same direction.</p>
+<p><img src="/HugoBlog/Posts/ElevatorPitch/extendArm.jpeg" alt="Extend arms"></p>
+<p>To implement this, I will look at the vector from the head to the controller and multiply it by some amount to have the position of the virtual hand. Then to select objects, you will be able to just grab them with a button on the controler.</p>
+<h2 id="movement">Movement</h2>
+<p>To move, you just push your arm toward the ground and it will anchor in place, letting you orbit around the position of the virtual hand.</p>
+<p><img src="/HugoBlog/Posts/ElevatorPitch/movement.jpeg" alt="Movement"></p>
+<p>To implement this, I will check if the virtual hand is underground.
+If so, I will snap it back to the ground and move the player by the same amount I had to move the hand.
+Once the hand anchored, every frame, I will move the player and the virtual hand by the same amount in order to have the virtual hand placed at the anchor point.
+When the player goes down again and move past a certain threshold, I will free the anchor to let the virtual hand move as normal.</p>
+<h2 id="both-at-the-same-time">Both at the same time</h2>
+<p>I think the selection technique will reveal its true potential once the player is confident enough to select and lmove at the same time, one with each handmaking it both precise and fast.</p>
+<p><img src="/HugoBlog/Posts/ElevatorPitch/both.jpeg" alt="Both"></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>3 Selection Pitch</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/3techniques/</link>
+			<pubDate>Wed, 03 Jan 2024 15:41:07 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/3techniques/</guid>
+			<description>Scalable Market Core idea You move and scale a supermarket around you.
+This is inspired by the hologram map in avatar, except you can scale it as big as you want and make it go all arround you.
+Manipulation You move in the scene by pinching with your hands as you would do on a tactile screen with your fingers. Then you move the supermarket arround you up to the point where the desired object is right in front of you, and here you just grab it</description>
+			<content type="html"><![CDATA[<h1 id="scalable-market">Scalable Market</h1>
+<h3 id="core-idea">Core idea</h3>
+<p>You move and scale a supermarket around you.</p>
+<p>This is inspired by the <a href="https://www.youtube.com/watch?v=tMDneicBizU">hologram map</a> in avatar, except you can scale it as big as you want and make it go all arround you.</p>
+<h3 id="manipulation">Manipulation</h3>
+<p><img src="/HugoBlog/Posts/3Techniques/ScalableMarket.png" alt="Scalable Market"></p>
+<p>You move in the scene by pinching with your hands as you would do on a tactile screen with your fingers. Then you move the supermarket arround you up to the point where the desired object is right in front of you, and here you just grab it</p>
+<h4 id="goals">Goals</h4>
+<ul>
+<li>Being more efficient</li>
+<li>Having a better spatial understanding</li>
+</ul>
+<h4 id="evaluation">Evaluation</h4>
+<ul>
+<li>Time</li>
+<li>Supermarket memory</li>
+</ul>
+<h4 id="drawbacks">Drawbacks</h4>
+<ul>
+<li>Only single player</li>
+</ul>
+<h1 id="doctor-octopus">Doctor Octopus</h1>
+<h3 id="core-idea-1">Core idea</h3>
+<p>You have expandable arms to grab AND move</p>
+<p>This is inspired by <a href="https://www.youtube.com/watch?v=d8GYAO8bRFU&amp;t=113s">Otto Octavius</a> in spiderman.</p>
+<h3 id="manipulation-1">Manipulation</h3>
+<p><img src="/HugoBlog/Posts/3Techniques/Octopus.png" alt="Octopus"></p>
+<p>You have a second pair of arms which is an extension of your actual arms, but scaled up. Because they are bigger, you can push toward the ground and it will make you go up in the air. This way, you can move in the supermarket to get close to the product with one arm, and select it with the other one.</p>
+<h4 id="goals-1">Goals</h4>
+<ul>
+<li>Move less</li>
+<li>Movement in funnier</li>
+</ul>
+<h4 id="evaluation-1">Evaluation</h4>
+<ul>
+<li>Time</li>
+<li>Mastery of the environment (presence + memory of the Supermarket)</li>
+</ul>
+<h4 id="drawbacks-1">Drawbacks</h4>
+<ul>
+<li>Hard to master</li>
+<li>Can lead to motion sickness</li>
+</ul>
+<h1 id="magic-powers">Magic powers</h1>
+<h3 id="core-idea-2">Core idea</h3>
+<p>You launch objects in the air then slice through mid air to select them, making a mess in the process</p>
+<p>This is inspired by the video games <a href="https://www.youtube.com/watch?v=qMkJf9N4bz4&amp;t=52s">Control</a> and <a href="https://www.youtube.com/watch?v=COFeh96bfWI">Fruit Ninja</a>. Control for how you launch objects in the air and Fruit Ninja for how you select them once in the air.</p>
+<h3 id="manipulation-2">Manipulation</h3>
+<p><img src="/HugoBlog/Posts/3Techniques/Magic.png" alt="Magic"></p>
+<p>You make a upward movement with your arms to lift object off the ground, then tyhy will magically float in the air, where you can select them by slicing through them with your hand or with a katana that you will have in your hand (to be able to reach further)</p>
+<h4 id="goals-2">Goals</h4>
+<ul>
+<li>Feel powerful</li>
+<li>Have fun</li>
+</ul>
+<h4 id="evaluation-2">Evaluation</h4>
+<ul>
+<li>Accuracy (Objects close together will be blown apart and easier to select in the air)</li>
+</ul>
+<h4 id="drawbacks-2">Drawbacks</h4>
+<ul>
+<li>Lots of actions and coordination needed to pickup one item</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Roll a Ball VR</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</link>
+			<pubDate>Wed, 27 Dec 2023 13:44:49 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</guid>
+			<description>Configuration Switching to PC I am usually working on a MacBook Air, so I followed the instruction of the TD up to the point where I had to download the Oculus application, which do not exist for MacOS&amp;hellip;
+So I had to redo all of the configuration on my fix PC which I did not use for a while, installing Unity, visual studio, etc. Fortunatelly, I just had to follow the same steps as for my Mac installation and it was quick enough as I already knew how to do it.</description>
+			<content type="html"><![CDATA[<h1 id="configuration">Configuration</h1>
+<h2 id="switching-to-pc">Switching to PC</h2>
+<p>I am usually working on a MacBook Air, so I followed the instruction of the TD up to the point where I had to download the Oculus application, which do not exist for MacOS&hellip;</p>
+<p>So I had to redo all of the configuration on my fix PC which I did not use for a while, installing Unity, visual studio, etc. Fortunatelly, I just had to follow the same steps as for my Mac installation and it was quick enough as I already knew how to do it.</p>
+<p>I also reinstalled Hugo on my PC to make to be easier to make the blog from here. I actually had an issue to connect to the git server beacause I was logged to another old git account on my PC. If you ever find yourself in the same situation, you need to go to know that windows is handling the credentials, therefore you need to go to <code>control panel &gt; user accounts &gt; credential manager &gt; Windows credentials &gt; Generic credentials</code> and change the git user from here&hellip;</p>
+<h2 id="using-the-quest">Using the Quest</h2>
+<p>Installing everything on the quest was straightforward, I just followed the instructions from the TD. Just note that the Oculus integration is now obsolete, but I decided to stick with it anyway, which proved to work. I then connected the Quest to my PC with the Oculus app, and I managed to make a basic scene rendered in the headset, but as soon as I quit play mode, the headset made a blackscreen and it was impossible to make it work again&hellip;</p>
+<p>Therefore, I decided to buy a Quest 2, that I wanted to buy anyway, and I connected it via AirLink, which worked really well.</p>
+<h2 id="roll-a-ball-asset">Roll a ball asset</h2>
+<p>I actually had to create a package from my mac and wetransfer it to my PC so I could use it. I then just had to import it.</p>
+<h1 id="making-it-vr">Making it VR</h1>
+<p>To make it work in VR, I had to change the behaviour of the scene. The main idea is to attach a script to the hands anchors that will handle the button press. If the handle collides with the roll a ball obect and the user press the button, we attach their positions together.</p>
+<p>In order to make this work, I had to introduce new colliders and to make two different layers that do not interact with one another so that the handle does not impact the game, just the rotation and the gravity.</p>
+<p><img src="/HugoBlog/Posts/RollABallVR/RollVR.png" alt="My Scene">
+<em>It was hard to take a screenshot while being in VR, sorry for the bad quality</em></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Roll A Ball Tutorial</title>

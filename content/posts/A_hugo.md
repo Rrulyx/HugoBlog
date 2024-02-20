@@ -6,6 +6,7 @@ comments: false
 images: 
 tags: 
   - setup
+  - Lab
 ---
 
 ## Quick Start

@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</loc>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/tags/lab/</loc>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
+  </url><url>
     <loc>https://rrulyx.github.io/HugoBlog/en/</loc>
-    <lastmod>2023-11-27T11:22:44+01:00</lastmod>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
   </url><url>
     <loc>https://rrulyx.github.io/HugoBlog/en/posts/</loc>
-    <lastmod>2023-11-27T11:22:44+01:00</lastmod>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
   </url><url>
-    <loc>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</loc>
-    <lastmod>2023-11-27T11:22:44+01:00</lastmod>
+    <loc>https://rrulyx.github.io/HugoBlog/en/tags/supermarket/</loc>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
   </url><url>
     <loc>https://rrulyx.github.io/HugoBlog/en/tags/</loc>
-    <lastmod>2023-11-27T11:22:44+01:00</lastmod>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
   </url><url>
     <loc>https://rrulyx.github.io/HugoBlog/en/tags/unity/</loc>
+    <lastmod>2024-01-29T12:48:53+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/</loc>
+    <lastmod>2024-01-14T12:13:27+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/tags/pitch/</loc>
+    <lastmod>2024-01-14T12:13:27+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/posts/3techniques/</loc>
+    <lastmod>2024-01-03T15:41:07+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</loc>
+    <lastmod>2023-12-27T13:44:49+01:00</lastmod>
+  </url><url>
+    <loc>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</loc>
     <lastmod>2023-11-27T11:22:44+01:00</lastmod>
   </url><url>
     <loc>https://rrulyx.github.io/HugoBlog/en/posts/b_unity/</loc>

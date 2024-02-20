@@ -6,8 +6,22 @@
     <description>Recent content in Unity on My journey in IGD301</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Nov 2023 11:22:44 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jan 2024 12:48:53 +0100</lastBuildDate>
     <atom:link href="https://rrulyx.github.io/HugoBlog/en/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementation</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</link>
+      <pubDate>Mon, 29 Jan 2024 12:48:53 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</guid>
+      <description>The concept I implemented what I explained in the Elevator Pitch and added a few things that I will explain in more details.&#xA;Implementation Selection For the Selection, I took a ray from the player to the controller and multiplied it to have the virtual hand position. To select an object, you press the index trigger.&#xA;I had to make two choices:&#xA;Where on the player would be the origin ?</description>
+    </item>
+    <item>
+      <title>Roll a Ball VR</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</link>
+      <pubDate>Wed, 27 Dec 2023 13:44:49 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</guid>
+      <description>Configuration Switching to PC I am usually working on a MacBook Air, so I followed the instruction of the TD up to the point where I had to download the Oculus application, which do not exist for MacOS&amp;hellip;&#xA;So I had to redo all of the configuration on my fix PC which I did not use for a while, installing Unity, visual studio, etc. Fortunatelly, I just had to follow the same steps as for my Mac installation and it was quick enough as I already knew how to do it.</description>
+    </item>
     <item>
       <title>Roll A Ball Tutorial</title>
       <link>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</link>

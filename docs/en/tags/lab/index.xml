@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My journey in IGD301</title>
-    <link>https://rrulyx.github.io/HugoBlog/en/</link>
-    <description>Recent content on My journey in IGD301</description>
+    <title>Lab on My journey in IGD301</title>
+    <link>https://rrulyx.github.io/HugoBlog/en/tags/lab/</link>
+    <description>Recent content in Lab on My journey in IGD301</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Jan 2024 12:48:53 +0100</lastBuildDate>
-    <atom:link href="https://rrulyx.github.io/HugoBlog/en/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rrulyx.github.io/HugoBlog/en/tags/lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Implementation</title>
       <link>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</link>
@@ -35,13 +35,6 @@
       <pubDate>Wed, 27 Dec 2023 13:44:49 +0100</pubDate>
       <guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaballvr/</guid>
       <description>Configuration Switching to PC I am usually working on a MacBook Air, so I followed the instruction of the TD up to the point where I had to download the Oculus application, which do not exist for MacOS&amp;hellip;&#xA;So I had to redo all of the configuration on my fix PC which I did not use for a while, installing Unity, visual studio, etc. Fortunatelly, I just had to follow the same steps as for my Mac installation and it was quick enough as I already knew how to do it.</description>
-    </item>
-    <item>
-      <title>Roll A Ball Tutorial</title>
-      <link>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</link>
-      <pubDate>Mon, 27 Nov 2023 11:22:44 +0100</pubDate>
-      <guid>https://rrulyx.github.io/HugoBlog/en/posts/rollaball/</guid>
-      <description>Setup I followed the Unity tutorial named Roll a Ball. It was a simple Unity project to understand the basics of making a game.&#xA;Most of the setup is basic, most of the work is already done for you, you just need to open a template. The only issue is that I was not able to create a URP (Univesal Render Pipeline) project because my version of Unity is too old, so I created a more basic 3D poject.</description>
     </item>
     <item>
       <title>B: Unity setup</title>

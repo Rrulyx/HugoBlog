@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pitch on My journey in IGD301</title>
+    <link>https://rrulyx.github.io/HugoBlog/en/tags/pitch/</link>
+    <description>Recent content in Pitch on My journey in IGD301</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jan 2024 12:13:27 +0100</lastBuildDate>
+    <atom:link href="https://rrulyx.github.io/HugoBlog/en/tags/pitch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elevator Pitch</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/</link>
+      <pubDate>Sun, 14 Jan 2024 12:13:27 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/elevatorpitch/</guid>
+      <description>Doctor Octopus I decided to immplement the method where have extendable arm. There is two differents parts to implement: one being the movement, the other being the selection. Let&amp;rsquo;s see how I intent on implementing, both of them.&#xA;Selection The idea behid the selection is that you have a virtual double of your arm that is longer than your original arm, but but points in the same direction.&#xA;To implement this, I will look at the vector from the head to the controller and multiply it by some amount to have the position of the virtual hand.</description>
+    </item>
+    <item>
+      <title>3 Selection Pitch</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/3techniques/</link>
+      <pubDate>Wed, 03 Jan 2024 15:41:07 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/3techniques/</guid>
+      <description>Scalable Market Core idea You move and scale a supermarket around you.&#xA;This is inspired by the hologram map in avatar, except you can scale it as big as you want and make it go all arround you.&#xA;Manipulation You move in the scene by pinching with your hands as you would do on a tactile screen with your fingers. Then you move the supermarket arround you up to the point where the desired object is right in front of you, and here you just grab it</description>
+    </item>
+  </channel>
+</rss>

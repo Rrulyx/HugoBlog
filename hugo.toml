@@ -68,14 +68,26 @@ enableEmoji = true
 [menu]
 
   [[menu.main]]
-    name = "Posts"
+    name = "0_Posts"
     url = "posts/"
     weight = 10
 
+
   [[menu.main]]
-    name = "Setup"
-    url = "tags/setup/"
+  name = "1_Labs"
+  url = "tags/lab/"
+  weight = 10  
+
+  [[menu.main]]
+  name = "2_Lectures"
+  url = "tags/lecture/"
+  weight = 10  
+
+  [[menu.main]]
+    name = "3_Project"
+    url = "tags/supermarket/"
     weight = 10
+
 
 
 #  [[menu.main]]
