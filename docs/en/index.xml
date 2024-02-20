@@ -6,8 +6,29 @@
     <description>Recent content on My journey in IGD301</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jan 2024 12:48:53 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 20 Feb 2024 18:24:31 +0100</lastBuildDate>
     <atom:link href="https://rrulyx.github.io/HugoBlog/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Selection Techniques</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/selection/</link>
+      <pubDate>Tue, 20 Feb 2024 18:24:31 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/selection/</guid>
+      <description>Bubble Mechanism Link&#xA;This selection technique is a mix between a bubble cursor and a Ray-casting method. The idea is to chose the closest object to the ray going from the controller. (Closest being either euclidian distance or angular distance)&#xA;Reach: infinite (the ray can be as long as needed) Cardinality: Single Progressive refinement: Continuous (The bubble changes size continously) SQUAD Link&#xA;In this Selection techniuqe, you begin by using a sphere to create a encapsulate loosely your object.</description>
+    </item>
+    <item>
+      <title>CAVE System</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/cave/</link>
+      <pubDate>Tue, 20 Feb 2024 16:55:10 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/cave/</guid>
+      <description>Here, we study the CAVE System. This is an old paper (1992), hence, this system have a lot of limitaions that is due to the state of the hardware at the time, but would be different today. We will nonetheless try to answer a few questions&#xA;What is the difference between the CAVE System and Head-Mounted Displays? What are their advantages/disavantadges? Where do you think the CAVE fits into the Reality-Virtuality Continuum of Milgram.</description>
+    </item>
+    <item>
+      <title>VRFails</title>
+      <link>https://rrulyx.github.io/HugoBlog/en/posts/vrfails/</link>
+      <pubDate>Tue, 20 Feb 2024 14:31:05 +0100</pubDate>
+      <guid>https://rrulyx.github.io/HugoBlog/en/posts/vrfails/</guid>
+      <description>While using VR, you could have different scenarios that could lead to collisions, let&amp;rsquo;s dive into two of them:&#xA;Colision with static objects In VR, the virtual world does not have the same collisisons as the real world. This can lead to issues, especially in small spaces, where a position empty in VR but have an object in the real world.&#xA;To solve this issue, I propose two solutions :</description>
+    </item>
     <item>
       <title>Implementation</title>
       <link>https://rrulyx.github.io/HugoBlog/en/posts/implementation/</link>

@@ -5,8 +5,136 @@
 		<description>Recent content in Posts on My journey in IGD301</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 29 Jan 2024 12:48:53 +0100</lastBuildDate>
+		<lastBuildDate>Tue, 20 Feb 2024 18:24:31 +0100</lastBuildDate>
 		<atom:link href="https://rrulyx.github.io/HugoBlog/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Selection Techniques</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/selection/</link>
+			<pubDate>Tue, 20 Feb 2024 18:24:31 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/selection/</guid>
+			<description>Bubble Mechanism Link
+This selection technique is a mix between a bubble cursor and a Ray-casting method. The idea is to chose the closest object to the ray going from the controller. (Closest being either euclidian distance or angular distance)
+Reach: infinite (the ray can be as long as needed) Cardinality: Single Progressive refinement: Continuous (The bubble changes size continously) SQUAD Link
+In this Selection techniuqe, you begin by using a sphere to create a encapsulate loosely your object.</description>
+			<content type="html"><![CDATA[<h1 id="bubble-mechanism">Bubble Mechanism</h1>
+<p><a href="https://ieeexplore.ieee.org/document/9089485">Link</a></p>
+<p>This selection technique is a mix between a bubble cursor and a Ray-casting method. The idea is to chose the closest object to the ray going from the controller. (Closest being either euclidian distance or angular distance)</p>
+<p><img src="/HugoBlog/Posts/Selection/Bubble.png" alt="Bubble"></p>
+<ul>
+<li><strong>Reach:</strong> infinite (the ray can be as long as needed)</li>
+<li><strong>Cardinality:</strong> Single</li>
+<li><strong>Progressive refinement:</strong> Continuous (The bubble changes size continously)</li>
+</ul>
+<h1 id="squad">SQUAD</h1>
+<p><a href="https://ieeexplore.ieee.org/abstract/document/5759219">Link</a></p>
+<p>In this Selection techniuqe, you begin by using a sphere to create a encapsulate loosely your object. The sphere position is determined by a ray casting method. The radius of the sphere being higher the furthest it is from camera.</p>
+<p><img src="/HugoBlog/Posts/Selection/SQUAD1.png" alt="Bubble"></p>
+<p>But because you also might have other objects in the sphere, You need to refine your choice by selecting where is your object among the 4 quarters.</p>
+<p><img src="/HugoBlog/Posts/Selection/SQUAD2.png" alt="Bubble"></p>
+<p>You do this until you only have your object.</p>
+<ul>
+<li><strong>Reach:</strong> infinite (the ray can be as long as needed)</li>
+<li><strong>Cardinality:</strong> Single</li>
+<li><strong>Progressive refinement:</strong> Discrete (Tou divide the number of items by 4 each time)</li>
+</ul>
+<h1 id="isith">iSith</h1>
+<p><a href="https://ieeexplore.ieee.org/document/1647507">Link</a></p>
+<p>In this Selection technique, you have one ray on each hand and you select the object closest to the projected intersection of this rays.</p>
+<p><img src="/HugoBlog/Posts/Selection/iSith.png" alt="Bubble"></p>
+<ul>
+<li><strong>Reach:</strong> Technically infinite (the rays can be as long as needed, but the intersection is hard to finetune if far away from the handles)</li>
+<li><strong>Cardinality:</strong> Single</li>
+<li><strong>Progressive refinement:</strong> None</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>CAVE System</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/cave/</link>
+			<pubDate>Tue, 20 Feb 2024 16:55:10 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/cave/</guid>
+			<description>Here, we study the CAVE System. This is an old paper (1992), hence, this system have a lot of limitaions that is due to the state of the hardware at the time, but would be different today. We will nonetheless try to answer a few questions
+What is the difference between the CAVE System and Head-Mounted Displays? What are their advantages/disavantadges? Where do you think the CAVE fits into the Reality-Virtuality Continuum of Milgram.</description>
+			<content type="html"><![CDATA[<p>Here, we study the <a href="https://dl.acm.org/doi/abs/10.1145/129888.129892">CAVE</a> System. This is an old paper (1992), hence, this system have a lot of limitaions that is due to the state of the hardware at the time, but would be different today. We will nonetheless try to answer a few questions</p>
+<ol>
+<li>What is the difference between the CAVE System and Head-Mounted Displays? What are their advantages/disavantadges?</li>
+<li>Where do you think the CAVE fits into the Reality-Virtuality Continuum of Milgram.</li>
+<li>Does the position in the Reality-Virtuality Continuum changes when more people are experiencing the CAVE
+system at the same time?</li>
+</ol>
+<h1 id="comparison-with-hmd">Comparison with HMD</h1>
+<p>The CAVE System is really different from a HMD: it consists in multiple screens placed around the user to represent the virtual world. It displays a picture based on the position of the user so that it matches the right perspective.</p>
+<p>Let&rsquo;s look at the major points that differ from the HMD:</p>
+<h2 id="fov-and-panorama">FoV and Panorama</h2>
+<p>Because the CAVE System is all around the user, it have a full Field of View and allows the user to look in any direction as fast as he wants, contrary to the HMD that need to recompute the scene at each move and that have a limited FoV.</p>
+<h2 id="body-representation">Body representation</h2>
+<p>The HMD uses a virtual body whereas the user can see himself in the CAVE system. This can be either a avantage or a disavantage depending on the use case:</p>
+<ul>
+<li>The body is realisitic and perfectly accurate</li>
+<li>The occlusion cannot be changed, meaning the user will never be able to see something close or pick up an object for instance</li>
+</ul>
+<h2 id="progressive-refinment">Progressive Refinment</h2>
+<p>The HMD basically needs to recompute a new scene at each frame, meaning that it will not be able to create a finer render. But if the user does not move it&rsquo;s head to much on a CAVE System, the image can be refined more and more.</p>
+<p>This would be really intresting today, as with a bit of time, we can produce photorealistic results and we can use AI to upscale the other results in the mean time, as done in the blender viewport. This could be a real advantage for 3D artists that want to work in VR.</p>
+<h2 id="collaboration">Collaboration</h2>
+<p>Because the CAVE System is less intrusive, a small number of user can collaborate on the same device, whereas they would need to have one HMD each to collaborate.</p>
+<h2 id="other-points">Other points</h2>
+<p>The paper also pinpoints other differences, but I feel they are not up to date anymore, for instance the time needed to track the head position, the bad resolution of screens, etc.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I think the CAVE System is an intresting alternative to HMD, especially for artists who needs to have something that can produce photorealistics renders and need to have a non intrusiove device for long sessions.</p>
+<p>But it stills lacks the possibility to change the occlusion of the hands, which can be a real turndown for all the interactivity&hellip;</p>
+<h1 id="milgram-continuum">Milgram Continuum</h1>
+<p>The CAVE System is more of an Augmented Virtuality, close to only virtual, as the only real element you interact with is your body.</p>
+<h2 id="with-more-people">With more people</h2>
+<p>When you do collaboration, it tends more towards reality for two reasons:</p>
+<ul>
+<li>You have another real human being in the virtual world.</li>
+<li>The System alone cannot track multiple users at the same time, meaning other users will not have the same presence
+<ul>
+<li>With shuttered glasses, the System can quickly alternate between users. But it still can break illusion to notice the screen blinking.</li>
+</ul>
+</li>
+</ul>
+<p>This makes for a really intresting tool for collaboration as often the main issue with collaborating in VR is that you lose the reality and natural facial expressions of the other users.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>VRFails</title>
+			<link>https://rrulyx.github.io/HugoBlog/en/posts/vrfails/</link>
+			<pubDate>Tue, 20 Feb 2024 14:31:05 +0100</pubDate>
+			
+			<guid>https://rrulyx.github.io/HugoBlog/en/posts/vrfails/</guid>
+			<description>While using VR, you could have different scenarios that could lead to collisions, let&amp;rsquo;s dive into two of them:
+Colision with static objects In VR, the virtual world does not have the same collisisons as the real world. This can lead to issues, especially in small spaces, where a position empty in VR but have an object in the real world.
+To solve this issue, I propose two solutions :</description>
+			<content type="html"><![CDATA[<p>While using VR, you could have different scenarios that could lead to collisions, let&rsquo;s dive into two of them:</p>
+<h1 id="colision-with-static-objects">Colision with static objects</h1>
+<p>In VR, the virtual world does not have the same collisisons as the real world. This can lead to issues, especially in small spaces, where a position empty in VR but have an object in the real world.</p>
+<p>To solve this issue, I propose two solutions :</p>
+<h2 id="virtual-doubles">Virtual doubles</h2>
+<p>One option is to create virtual doubles of every object in the real world.</p>
+<p><img src="/HugoBlog/Posts/VRFails/virtualDouble.jpeg" alt="Virtual Doubles"></p>
+<p>Each object in the real world have a virtual double and the user tends to avoid them.</p>
+<p>There is several issues, one being that it requires a lot of assets to be created, the other being that it is hard to have an open space, for instance a meadow would be hard to create.</p>
+<h2 id="see-through">See through</h2>
+<p>When you move to close to an object, the object appears in your headset to avoid collision.</p>
+<p>This is a good option, but it can break the immersion when you see the real object. Furthermore, if the player is doing a fast movement, he will not have enough time to react.</p>
+<h1 id="loss-of-balance">Loss of balance</h1>
+<p>For various purposes, you might want to have a different camera orientation on the virtual world than on the real world. This can lead the inner ear to belost and create motion sickness or loss of balance. Let&rsquo;s see how one could fix this:</p>
+<h2 id="a-rolling-ball">A rolling ball</h2>
+<p>One could use a ball that replicates the motion from the virtual camera in the real world, like <a href="https://newatlas.com/vr/eight360-nova-vr-simulator-ball/">New Atals</a> does.</p>
+<p><img src="/HugoBlog/Posts/VRFails/360.png" alt="Eight360">
+<em>The Eight360 Nova</em></p>
+<p>But this is really expensive and not everybody can have access to this.</p>
+<h2 id="remaining-seated">Remaining seated</h2>
+<p>Another option is simply to ask the player to sit down before having a big rotation. This could be done by having a virtual double of the player real chair, or by asking him yo sit on the floor.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Implementation</title>
