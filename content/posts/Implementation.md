@@ -138,3 +138,11 @@ I realised several things while they were playing:
 - They always had one arm on the ground, they almost never touched the ground and when they had to, they were slower and less precise.
 - Each time they had to move, they would extend the arms just for how funny the movement is, even if it would take longer and lead to less precision.
 - The movement create a lot of motion sickness, which makes it almost unusable for more than 5 minutes...
+
+
+# Results
+
+Here is the GitHub [link](https://github.com/Rrulyx/IGD301SuperMarket).
+
+Here is a video of the result:
+{{< youtube o71jHK08mG4 >}}
